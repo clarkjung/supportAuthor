@@ -1,6 +1,7 @@
 package machinelearning;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -21,7 +22,7 @@ import tools.Counter;
 /**
  * Abstract base extended by any concrete classifier.  It implements the basic
  * functionality for storing categories or features and can be used to calculate
- * basic probabilities – both category and feature probabilities. The classify
+ * basic probabilities ��� both category and feature probabilities. The classify
  * function has to be implemented by the concrete classifier class.
  *
  * @author Philipp Nolte and Jaeyoon Jung
@@ -45,7 +46,7 @@ public abstract class Classifier<T, K> implements IFeatureProbability<T, K> {
     /**
      * The initial memory capacity or how many classifications are memorized.
      */
-    private int memoryCapacity = 10000;
+    private int memoryCapacity = 10000000;
 
     /**
      * A dictionary mapping features to their number of occurrences in each
@@ -468,6 +469,26 @@ public abstract class Classifier<T, K> implements IFeatureProbability<T, K> {
 		
 		return list;
     }
+    
+    public void learnFolder(K category, String folderPath){
+		File folder = new File(folderPath);
+		File[] listOfFiles = folder.listFiles();
+		int totalSize = listOfFiles.length;
+		int count = 0;
+		
+		for (File file : listOfFiles) {
+			if (file.isFile()) {
+				String fileNameOnly = file.getName();
+				String fullFilePath = folderPath + fileNameOnly;
+				
+				if (fullFilePath.endsWith(".txt")) {
+					count++;
+					learn(category, fullFilePath);
+					if ( count % 10 == 0 ) System.out.println(count + "/" + totalSize + " done");
+				}
+			}
+		}
+    }
         
     @SuppressWarnings("unchecked")
 	public void learn(K category, String textFilePath){
@@ -486,6 +507,7 @@ public abstract class Classifier<T, K> implements IFeatureProbability<T, K> {
 		
 		try {
 			while ((sCurrentLine = br.readLine()) != null) {
+				if(sCurrentLine.trim().isEmpty()) continue;
 				if(usingTargetWordsList){
 					List<String> tempList = filterList(sCurrentLine.toLowerCase(), targetPhraseList);
 					list.addAll(tempList);
@@ -578,5 +600,6 @@ public abstract class Classifier<T, K> implements IFeatureProbability<T, K> {
     public abstract Classification<T, K> classify(Collection<T> features);
     
     public abstract Classification<T, K> classify(String unknownTextFilePath);
+    public abstract void classifyFolder(K category, String folderPath);
 
 }

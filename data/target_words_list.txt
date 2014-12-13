@@ -1,0 +1,1232 @@
+e-gi.
+e.
+etc.
+Jan.
+Feb.
+Mar.
+Apr.
+May.
+Jun.
+Jul.
+Aug.
+Sep.
+Oct.
+Nov.
+Dec.
+Sat.
+Sun.
+Mon.
+Tue.
+Wed.
+Thu.
+Fri.
+lab.
+asap
+USA
+tons
+undergrad.
+grad.
+HR
+Prof.
+AI
+ur
+&
+abt
+mt
+mt.
+shd
+shd.
+wch
+wd
+wd.
+wh
+wh.
+yr
+yr-
+yrs
+yrs.
+2d
+2n
+3d
+acct
+acct.
+advt
+aftern
+aftern.
+aftn
+aftn.
+AM
+anti-Cathc.
+Arc.
+Ass.
+B.M.
+bkfst
+bkfst.
+brkfst
+C.B.E.
+cent
+chap
+chap.
+chaps
+depart.
+edn
+Eng.
+H.ofLds
+Hist.
+hrs.
+in.
+Ld.
+Ldy
+Ldy.
+lovg
+Ly
+Ly.
+max.
+mem.
+min.
+min:
+Phys.
+prob.
+recvd
+Secty.
+temp.
+Trans.
+Univ.
+vol.
+Xmas
+Xtian
+yestdy
+acad.
+adm.
+bib.
+ain't
+aren't
+can't
+couldn't
+didn't
+doesn't
+don't
+hadn't
+hasn't
+haven't
+he'd
+he'll
+he's
+I'd
+I'll
+I'm
+I've
+isn't
+let's
+mightn't
+mustn't
+shan't
+she'd
+she'll
+she's
+shouldn't
+that's
+there's
+they'd
+they'll
+they're
+they've
+we'd
+we're
+we've
+weren't
+what'll
+what're
+what's
+what've
+where's
+who's
+who'll
+who're
+who've
+won't
+wouldn't
+would've
+you'd
+you'll
+you're
+you've
+that'll
+it's
+we'll
+it'd
+a little
+concerning
+abstracted
+ingest
+copious
+affix
+counsel
+repeatedly
+intend
+allocate
+furthermore
+in addition
+anyone
+anywhere
+anomie
+petition
+acclamation
+requisition
+commendation
+mannered
+enquire
+aver
+designate
+postulate
+initially
+immediately
+characteristic
+jurisdiction
+eschew
+cognizant
+ill
+fundamental
+will
+littoral
+plead
+novice
+minimize
+whine
+superior
+ameliorate
+major
+large
+greater
+acerbity
+informer
+reprehension
+beatitude
+sanguinary
+drunkard
+illimitable
+vaunt
+resplendent
+convey
+vomit
+complaisant
+insolvent
+exasperate
+construct
+terrorize
+occupied
+however
+purchase
+eradicate
+transport
+apprehend
+understand
+desist
+opportunity
+alter
+dialogue
+inexpensive
+investigate
+masticate
+immature
+select
+portly
+fool
+immaculate
+transparent
+unmistakable
+sunder
+ascend
+apparel
+condole
+directive
+vanity
+solicitude
+deportment
+assembly
+disarray
+mindful
+deem
+solace
+govern
+transmute
+replica
+craven
+associate
+friend
+throng
+wail
+fondle
+anathema
+pretty
+father
+diurnal
+handle
+decompose
+ethical
+consecrate
+expunge
+flavorful
+ascertain
+arduous
+imbibe
+assiduous
+indistinct
+incapacitate
+aspersion
+calamity
+colloquy
+malady
+repugnant
+perform
+hound
+dubiety
+skeptic
+submerge
+foreboding
+impel
+decline
+intoxicated
+desiccated
+obtuse
+immerse
+facsimile
+previous
+dine
+restless
+discomposure
+vacant
+gladden
+finish
+unending
+sufficient
+efface
+annually
+everyone
+quotidian
+nefarious
+remit
+elucidate
+data
+disinterested
+renowned
+agriculture
+prescience
+swift
+corpulent
+emotion
+lie
+specialization
+diaphanous
+locate
+discover
+rectify
+astounded
+gaudy
+mesomorphic
+unsubstantial
+augur
+pardon
+frangible
+release
+exempt
+refrigerator
+amiable
+sportive
+comic
+talkative
+aperture
+tillage
+convene
+magnanimous
+obtain
+acquire
+decrease
+crux
+donate
+contribute
+distribute
+spectacles
+luminous
+contract
+increase
+objective
+beneficial
+generosity
+mistake
+gastronome
+reputable
+avaricious
+interrogate
+complain
+adult
+believe
+man
+felicity
+laborious
+acrimony
+must
+burdensome
+ponderous
+assist
+assistant
+elevated
+insinuation
+avocation
+residence
+dwelling
+caress
+enormous
+humankind
+jocular
+expedite
+infirmity
+connote
+consequential
+responsible
+finally
+innate
+adventitious
+comprise
+circumlocution
+interpose
+cynical
+occupation
+impact
+preserve
+retain
+child
+somewhat
+approximately
+benevolence
+deficiency
+woman
+relax
+indolence
+detect
+scholar
+pedantry
+depart
+residue
+allay
+permit
+authorize
+correspondence
+respite
+alleviate
+such as
+illuminate
+reside
+energetic
+prosperous
+disaffection
+lonely
+research
+clamorous
+fortunate
+tepid
+insane
+principally
+ensure
+numerous
+possibly
+perhaps
+in other words
+instrumentality
+denote
+repair
+procedure
+midst
+transform
+mother
+virtuous
+transfer
+maudlin
+arrest
+require
+contiguous
+subsequently
+agreeable
+pedantic
+no one
+prying
+anesthetized
+dullard
+arcane
+proffer
+satisfactory
+aged
+senior
+archaic
+intermittently
+gainsay
+sanguine
+emanate
+denouement
+paramount
+possess
+wan
+dehydrated
+partake
+compensation
+summit
+telephone
+photograph
+negligible
+categorize
+scheme
+aeroplane
+valiant
+passage
+sway
+laud
+minister
+presentiment
+gift
+essentially
+award
+undertaking
+assure
+motivate
+alacrity
+ambitious
+manage
+rapid
+resign
+quote
+risque
+quite
+ratiocination
+renaissance
+pleonastic
+inexorable
+abide
+recall
+supersede
+appeal
+parallel
+fortitude
+repose
+annoy
+mature
+jeopardy
+extort
+spoil
+approbation
+reject
+exiguous
+chide
+appear
+transmit
+return
+affect
+request
+dishonorable
+acute
+effulgent
+knife
+reduce
+demonstrate
+evince
+ailment
+vision
+meager
+cursory
+mawkish
+diminutive
+kiss
+seize
+underhand
+therefore
+consequently
+social
+someone
+type
+Rather
+mediocre
+alcoholic
+asperity
+oration
+velocity
+propagate
+potato
+penetrate
+begin
+adhere
+larceny
+assignment
+emolument
+halt
+narrative
+stalwart
+materials
+things
+items
+circumscribe
+deluge
+barter
+perspiration
+oscillate
+diplomatic
+employ
+mimicry
+palatable
+educate
+inform
+recount
+matter
+issue
+cogitate
+eternal
+multiply
+gratuity
+fatigued
+sepulcher
+also
+completely
+poignant
+ornament
+voyage
+veracious
+endeavour
+song
+immutable
+comprehension
+dissatisfied
+intractable
+altruism
+disturb
+nervous
+consume
+sundry
+highly
+desire
+wish
+observe
+affluent
+complete
+entire
+compliant
+joke
+verbose
+feasible
+apprehension
+inferior
+incorrect
+criterion
+for example
+that is
+and so on
+Okay
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+Saturday
+Sunday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+airplane
+laboratory
+as soon as possible
+United States of America
+tonnes
+undergraduate
+graduate
+Human Resources
+Professor
+Artificial Intelligence
+might
+should
+would
+which
+your
+yours
+second
+third
+account
+advertisement
+afternoon
+ante meridiem
+anti-Catholic
+Archaeological
+Association
+British Museum
+breakfast
+Commander of the Order
+century
+chapter
+chapters
+department
+edition
+English
+House of Lords
+History
+hours
+inches
+Lord
+loving
+Lady
+maximum
+memoires
+minutes
+Physical
+probably
+received
+Secretary
+temperature
+to equal
+Transactions
+University
+volume
+Christmas
+Christian
+yesterday
+years
+academic
+administration
+bible
+a bit
+about
+absentminded
+absorb
+abundant
+add
+advise
+again and again
+aim
+allot
+allow
+and
+anybody
+anyplace
+apathy
+applause
+application
+approval
+around
+arty
+ask
+ask about
+ask for
+assert
+assign
+assume
+at first
+at once
+attribute
+authority
+avoid
+aware
+awful
+basic
+be going to
+beach
+beg
+beginner
+belittle
+bellyache
+better
+big
+bigger
+bitterness
+blabbermouth
+blame
+blessedness
+bloody
+boozer
+boundless
+brag
+brilliant
+bring
+bring up
+broad-minded
+broke
+bug
+build
+bully
+busy
+but
+buy
+cancel
+carry
+catch
+catch on
+cease
+chance
+change
+chat
+cheap
+check up
+chew
+childish
+choose
+chubby
+chump
+clean
+clear
+cleave
+climb
+clothing
+comfort
+command
+conceit
+concern
+conduct
+conference
+confusion
+conscious
+consider
+console
+control
+convert
+copy
+cowardly
+coworker
+crony
+crowd
+cry
+cuddle
+curse
+cute
+dad
+daily
+deal with
+decay
+decent
+dedicate
+delete
+delicious
+determine
+difficult
+digest
+diligent
+dim
+disable
+disapproval
+disaster
+discussion
+disease
+disgusting
+do
+dog
+doubt
+doubter
+douse
+dread
+drive
+drop
+drunk
+dry
+dub
+dumb
+dunk
+duplicate
+earlier
+eat
+edgy
+embarrassement
+empty
+encourage
+end
+endless
+enough
+erase
+everlasting
+every year
+everybody
+everyday
+evil
+excuse
+explain
+facts
+fair
+fall
+famous
+farming
+farsightedness
+Fast
+fat
+feeling
+fib
+field
+filmy
+find
+fix
+flabbergasted
+flashy
+fleshy
+flimsy
+foretell
+forgive
+fragile
+Free
+fridge
+friendly
+frisky
+funny
+gabby
+gap
+gardening
+gather
+generous
+get
+get out
+get smaller
+gist
+give
+give out
+glasses
+gleaming
+go
+go down with
+go through
+go up
+goal
+good
+goodwill
+goof
+gourmet
+great
+greedy
+grill
+gripe
+grown-up
+guess
+guy
+happiness
+hard
+harshness
+have to
+heavy
+hefty
+help
+helper
+high
+hint
+hire
+hoard
+hobby
+home
+house
+hug
+huge
+humanity
+humorous
+hurry
+illness
+imply
+important
+improve
+in charge
+in the end
+inbred
+incidental
+include
+indirectness
+inhabit
+interject
+jam
+jaundiced
+job
+jolt
+keep
+kid
+kind of
+kindness
+lack
+lay back
+laziness
+learn
+learner
+learning
+leave
+leftover
+lessen
+let
+letter
+letup
+lighten
+like
+lit up
+live
+lively
+loaded
+loneliness
+lonesome
+look up
+loud
+lucky
+lukewarm
+mad
+mainly
+make sure
+many
+maybe
+mean
+means
+meant
+mend
+method
+middle
+modify
+mom
+moral
+move
+mushy
+nab
+need
+neighboring
+next
+nice
+nitpicking
+nobody
+nosy
+numb
+numbskull
+obscure
+offer
+ok
+old
+older
+old-fashioned
+on and off
+oppose
+optimistic
+originate
+outcome
+outstanding
+own
+pale
+parched
+participate
+pay
+peak
+phone
+photo
+piddling
+pigeonhole
+plan
+plane
+Plucky
+portion
+power
+praise
+preacher
+premonition
+present
+pretty much
+prize
+project
+promise
+prompt
+promptness
+pushy
+put up
+quick
+quit
+quotation
+raunchy
+really
+reasoning
+rebirth
+redundant
+relentless
+remain
+remember
+replace
+resemble
+resolution
+rest
+rile
+ripen
+risk
+rob
+rot
+sanction
+say no
+scanty
+scold
+seem
+send
+send back
+sentiment
+setup
+shameful
+sharp
+shining
+shiv
+shock
+shorten
+show
+show up
+sickness
+sight
+skimpy
+slander
+slapdash
+slushy
+small
+smooch
+snatch
+sneaky
+so
+sociable
+somebody
+sort
+sort of
+so-so
+sot
+sourness
+speech
+speed
+spread
+spud
+stab
+start
+stick
+stickup
+stint
+stipend
+stop
+story
+strong
+stuff
+surround
+swamp
+swap
+sweat
+swing
+tactful
+take on
+takeoff
+tasty
+teach
+tell
+thing
+think
+timeless
+times
+tip
+tired
+tomb
+too
+totally
+touching
+trim
+trip
+truthful
+try
+tune
+unchangeable
+understanding
+unhappy
+unruly
+unselfishness
+upset
+uptight
+use
+various
+very
+want
+watch
+wealthy
+whole
+willing
+wisecrack
+wordy
+workable
+worry
+worse
+wrong
+yardstick
+am not
+are not
+cannot
+could not
+did not
+does not
+do not
+had not
+has not
+have not
+he had
+he would
+he shall
+he will
+he is
+he has
+I would
+I had
+I shall
+I will
+I am
+I have
+is not
+let us
+might not
+must not
+shall not
+she had
+she would
+she will
+she shall
+she is
+she has
+should not
+that has
+there is
+there has
+they would
+they had
+they will
+they shall
+they are
+they have
+we would
+we had
+we are
+we have
+were not
+what shall
+what will
+what are
+what is
+what has
+what have
+where has
+where is
+who had
+who would
+who will
+who shall
+who are
+who has
+who is
+who have
+will not
+would not
+would have
+you had
+you would
+you will
+you shall
+you are
+you have
+that will
+it is
+we will
+we shall
+it would
+it had

@@ -21,12 +21,34 @@ public class RunnableExample {
          * Strings and the context will be classified with a String according
          * to the featureset of the context.
          */
-    	String targetWordsListPath = "data/targetWordList.txt";
+    	String targetWordsListPath = "data/target_words_list.txt";
         Classifier<String, String> bayes = new BayesClassifier<String, String>(targetWordsListPath);
-        bayes.learn("positive", "data/train1.txt");
-        bayes.learn("negative", "data/train2.txt");
-        //System.out.println(bayes.featureCount("i", "positive"));
-        System.out.println(bayes.classify("data/unknowntext.txt"));
+        String formalTrainFolder = "data/train/formal/";
+        String informalTrainFolder = "data/train/informal/";
+        String formalTestFolder = "data/test/formal/";
+        String informalTestFolder = "data/test/informal/";
+        
+        bayes.learnFolder("formal", formalTrainFolder);
+        bayes.learnFolder("informal", informalTrainFolder);
+        System.out.println("train done");
+        
+        System.out.println(bayes.categoryCount("formal"));
+        System.out.println(bayes.categoryCount("informal"));
+        System.out.println(bayes.featureCount("we will", "formal"));
+        System.out.println(bayes.featureCount("we will", "informal"));
+        
+        System.out.println("====formal test====");
+        bayes.classifyFolder("formal", formalTestFolder);
+        
+        System.out.println("====informal test====");
+        bayes.classifyFolder("informal", informalTestFolder);
+        
+        
+        
+//        bayes.learn("positive", "data/train1.txt");
+//        bayes.learn("negative", "data/train2.txt");
+//        //System.out.println(bayes.featureCount("i", "positive"));
+//        System.out.println(bayes.classify("data/unknowntext.txt"));
 
         
 
@@ -42,7 +64,7 @@ public class RunnableExample {
         //bayes.learn("negative", "data/test.txt");
         //bayes.learn("negative", "data/test.txt", "data/targetWordList.txt");
         
-        System.out.println(bayes.featureCount("I", "negative"));
+        //System.out.println(bayes.featureCount("I", "negative"));
 
         final String[] negativeText = "I hate rain".split("\\s");
         bayes.learn("negative", Arrays.asList(negativeText));

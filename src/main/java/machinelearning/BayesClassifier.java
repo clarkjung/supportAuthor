@@ -1,6 +1,7 @@
 package machinelearning;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.TreeSet;
  * classifier implements a naive Bayes approach to classifying a given set of
  * features: classify(feat1,...,featN) = argmax(P(cat)*PROD(P(featI|cat)
  *
- * @author Philipp Nolte
+ * @author Philipp Nolte, Jaeyoon Jung
  *
  * @see http://en.wikipedia.org/wiki/Naive_Bayes_classifier
  *
@@ -53,8 +54,8 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
     private float featuresProbabilityProduct(Collection<T> features, K category) {
         float product = 0.0f;
         for (T feature : features) product += Math.log10(this.featureWeighedAverage(feature, category));
-        //return product;
-        return (float) Math.pow(10, product);
+        return product;
+        //return (float) Math.pow(10, product);
     }
 
     /**
@@ -72,8 +73,8 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
 //    	System.out.println("featuresProbabilityProduct(features," + category + "): " + featuresProbabilityProduct(features, category));
     	float categoryCount = (float) Math.log10((float) this.categoryCount(category));
     	float getCategoriesTotal = (float) Math.log10((float) this.getCategoriesTotal());
-    	float featuresProbabilityProduct = (float) Math.log10(featuresProbabilityProduct(features, category));
-    	System.out.println("categoryProbability: " + (categoryCount - getCategoriesTotal + featuresProbabilityProduct));
+    	float featuresProbabilityProduct = featuresProbabilityProduct(features, category);
+    	//System.out.println("categoryProbability: " + (categoryCount - getCategoriesTotal + featuresProbabilityProduct));
     	return categoryCount - getCategoriesTotal + featuresProbabilityProduct;
         //return ((float) this.categoryCount(category) / (float) this.getCategoriesTotal()) * featuresProbabilityProduct(features, category);
     }
@@ -138,6 +139,28 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
     public Collection<Classification<T, K>> classifyDetailed(Collection<T> features) {
         return this.categoryProbabilities(features);
     }
+    
+    public void classifyFolder(K category, String folderPath){
+    	int count = 0;
+    	int hit = 0;
+		File folder = new File(folderPath);
+		File[] listOfFiles = folder.listFiles();
+		int totalSize = listOfFiles.length;
+		
+		for (File file : listOfFiles) {
+			if (file.isFile()) {
+				String fileNameOnly = file.getName();
+				String fullFilePath = folderPath + fileNameOnly;
+				
+				if (fullFilePath.endsWith(".txt")) {
+					count++;
+					if (classify(fullFilePath).getCategory().equals(category)) hit++;
+					if (count % 10 == 0) System.out.println(count + "/" + totalSize + " done");
+				}
+			}
+		}
+		System.out.println("count: " + count + ", hit: " + hit);
+    }
 
 	@Override
 	public Classification<T, K> classify(String unknownTextFilePath) {
@@ -156,6 +179,7 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
 		
 		try {
 			while ((sCurrentLine = br.readLine()) != null) {
+				if(sCurrentLine.trim().isEmpty()) continue;
 				if(usingTargetWordsList){
 					List<String> tempList = filterList(sCurrentLine.toLowerCase(), targetPhraseList);
 					list.addAll(tempList);
