@@ -13,15 +13,8 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-/**
- * A concrete implementation of the abstract Classifier class.  The Bayes
- * classifier implements a naive Bayes approach to classifying a given set of
- * features: classify(feat1,...,featN) = argmax(P(cat)*PROD(P(featI|cat)
- *
- * @author Philipp Nolte, Jaeyoon Jung
- *
- * @see http://en.wikipedia.org/wiki/Naive_Bayes_classifier
- *
+
+/*
  * @param <T> The feature class.
  * @param <K> The category class.
  */
@@ -37,64 +30,21 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
     public BayesClassifier(){
     	super();
     }
-
-    /**
-     * Calculates the product of all feature probabilities: PROD(P(featI|cat)
-     *
-     * @param features The set of features to use.
-     * @param category The category to test for.
-     * @return The product of all feature probabilities.
-     */
-//    private float featuresProbabilityProduct(Collection<T> features, K category) {
-//        float product = 1.0f;
-//        for (T feature : features) product *= this.featureWeighedAverage(feature, category);
-//        return product;
-//    }
     
     private float featuresProbabilityProduct(Collection<T> features, K category) {
         float product = 0.0f;
         for (T feature : features) product += Math.log10(this.featureWeighedAverage(feature, category));
         return product;
-        //return (float) Math.pow(10, product);
     }
 
-    /**
-     * Calculates the probability that the features can be classified as the
-     * category given.
-     *
-     * @param features The set of features to use.
-     * @param category The category to test for.
-     * @return The probability that the features can be classified as the
-     *    category.
-     */
     private float categoryProbability(Collection<T> features, K category) {
-//    	System.out.println("categoryCount-" + category + ": " + (float) this.categoryCount(category));
-//    	System.out.println("getCategoriesTotal: " + (float) this.getCategoriesTotal());
-//    	System.out.println("featuresProbabilityProduct(features," + category + "): " + featuresProbabilityProduct(features, category));
     	float categoryCount = (float) Math.log10((float) this.categoryCount(category));
     	float getCategoriesTotal = (float) Math.log10((float) this.getCategoriesTotal());
     	float featuresProbabilityProduct = featuresProbabilityProduct(features, category);
-    	//System.out.println("categoryProbability: " + (categoryCount - getCategoriesTotal + featuresProbabilityProduct));
     	return categoryCount - getCategoriesTotal + featuresProbabilityProduct;
-        //return ((float) this.categoryCount(category) / (float) this.getCategoriesTotal()) * featuresProbabilityProduct(features, category);
     }
 
-    /**
-     * Retrieves a sorted <code>Set</code> of probabilities that the given set
-     * of features is classified as the available categories.
-     *
-     * @param features The set of features to use.
-     * @return A sorted <code>Set</code> of category-probability-entries.
-     */
     private SortedSet<Classification<T, K>> categoryProbabilities(Collection<T> features) {
-
-        /*
-         * Sort the set according to the possibilities. Because we have to sort
-         * by the mapped value and not by the mapped key, we can not use a
-         * sorted tree (TreeMap) and we have to use a set-entry approach to
-         * achieve the desired functionality. A custom comparator is therefore
-         * needed.
-         */
         SortedSet<Classification<T, K>> probabilities =
                 new TreeSet<Classification<T, K>>(
                         new Comparator<Classification<T, K>>() {
@@ -115,11 +65,6 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
         return probabilities;
     }
 
-    /**
-     * Classifies the given set of features.
-     *
-     * @return The category the set of features is classified as.
-     */
     @Override
     public Classification<T, K> classify(Collection<T> features) {
         SortedSet<Classification<T, K>> probabilites = this.categoryProbabilities(features);
@@ -130,12 +75,6 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
         return null;
     }
 
-    /**
-     * Classifies the given set of features. and return the full details of the
-     * classification.
-     *
-     * @return The set of categories the set of features is classified as.
-     */
     public Collection<Classification<T, K>> classifyDetailed(Collection<T> features) {
         return this.categoryProbabilities(features);
     }
@@ -155,13 +94,14 @@ public class BayesClassifier<T, K> extends Classifier<T, K> {
 				if (fullFilePath.endsWith(".txt")) {
 					count++;
 					if (classify(fullFilePath).getCategory().equals(category)) hit++;
-					if (count % 10 == 0) System.out.println(count + "/" + totalSize + " done");
+					if (count % 100 == 0) System.out.println("testing " + category + " docs: " + count + "/" + totalSize + " done");
 				}
 			}
 		}
 		System.out.println("count: " + count + ", hit: " + hit);
     }
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Classification<T, K> classify(String unknownTextFilePath) {
     	
