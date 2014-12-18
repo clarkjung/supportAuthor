@@ -65,7 +65,7 @@ public class ExcelReader {
 	            
 	        }
 	        
-	        connection.close();
+	        connection.closeConnection();
 	        myWorkBook.close();
 	        fis.close();
 	        

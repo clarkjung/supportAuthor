@@ -22,7 +22,7 @@ public class ConnectionMain {
 		//connection.insertValue(schemaName, tableName, 3, text, gender);
 		//rows = connection.selectWhereIdIs(schemaName, indexTableName, 1);
 		System.out.println(connection.selectDistinctID(schemaName, indexTableName));
-		connection.close();
+		connection.closeConnection();
 		
 		//System.out.println(rows);
 		

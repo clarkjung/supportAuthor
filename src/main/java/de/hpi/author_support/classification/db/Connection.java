@@ -2,6 +2,9 @@ package de.hpi.author_support.classification.db;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import de.hpi.author_support.classification.dao.IDnGender;
 
 public class Connection {
 
@@ -16,6 +19,10 @@ public class Connection {
 	public Connection(String userID, String password){
 		this.userID = userID;
 		this.password = password;
+		openConnection();
+	}
+	
+	private void openConnection(){
 		try {
 			this.conn = java.sql.DriverManager.getConnection(connectionURL, this.userID, this.password);
 			this.stmt = conn.createStatement();
@@ -26,7 +33,7 @@ public class Connection {
 		}
 	}
 	
-	public void insertValue(String schemaName, String tableName, int id, String text, String gender){
+	public void insertValue(String schemaName, String tableName, int id, String text, String gender){	
 		
 		String sqlCommand = String.format("INSERT INTO %s.%s VALUES (%d, '%s', '%s')", schemaName, tableName, id, text, gender);
 		
@@ -36,28 +43,47 @@ public class Connection {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public ArrayList<ArrayList<String>> selectWhereIdIs(String schemaName, String indexTableName, int id){
-		
+
 		ArrayList<ArrayList<String>> rows = new ArrayList<ArrayList<String>>();
 		
 		try {
-			String sqlCommand = String.format("SELECT TA_TOKEN, TA_TYPE FROM %s.\"%s\" WHERE ID=%d", schemaName, indexTableName, id);
+			String sqlCommand = String.format("SELECT TA_TYPE, TA_NORMALIZED FROM %s.\"%s\" WHERE ID=%d", schemaName, indexTableName, id);
 			ResultSet rs = stmt.executeQuery(sqlCommand);
 			while(rs.next()){
 				ArrayList<String> row = new ArrayList<String>();
-				row.add(0, rs.getString("TA_TOKEN"));
-				row.add(1, rs.getString("TA_TYPE"));
+				row.add(0, rs.getString("TA_TYPE"));
+				row.add(1, rs.getString("TA_NORMALIZED"));
 				rows.add(row);
-				//System.out.println(rs.getString("TA_TOKEN") + ": " + rs.getString("TA_TYPE"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		return rows;
+	}
+	
+	public ArrayList<IDnGender> selectIDAndGender(String schemaName, String tableName){
 		
+		ArrayList<IDnGender> rows = new ArrayList<IDnGender>();
+		
+		try {
+			String sqlCommand = String.format("SELECT ID, GENDER FROM %s.%s", schemaName, tableName);
+			ResultSet rs = stmt.executeQuery(sqlCommand);
+			while(rs.next()){
+				IDnGender row = new IDnGender();
+				row.setId(Integer.parseInt(rs.getString("ID")));
+				row.setGender(rs.getString("GENDER"));
+				rows.add(row);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return rows;
 	}
 	
 	public int selectDistinctID(String schemaName, String indexTableName){
@@ -73,11 +99,11 @@ public class Connection {
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return count;
 	}
 	
-	public void close(){
+	public void closeConnection(){
 		try {
 			if(rs!=null) rs.close();
 			if(stmt!=null) stmt.close();
