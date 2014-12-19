@@ -42,6 +42,26 @@ public class GenderDocumentDao {
 		return tempMap;
 	}
 	
+	public List<GenderDocument> getMaleDocs(){
+		
+		List<GenderDocument> maleDocs = new ArrayList<GenderDocument>();
+		for (GenderDocument doc : genderDocs){
+			if(Gender.valueOf(doc.getGender()) == Gender.M) maleDocs.add(doc);
+		}
+		
+		return maleDocs;
+	}
+	
+	public List<GenderDocument> getFemaleDocs(){
+		
+		List<GenderDocument> femaleDocs = new ArrayList<GenderDocument>();
+		for (GenderDocument doc : genderDocs){
+			if(Gender.valueOf(doc.getGender()) == Gender.F) femaleDocs.add(doc);
+		}
+		
+		return femaleDocs;
+	}
+	
 	public void fetchGenderDocuments(String schemaName, String indexTableName){
 		
 		int totalRows = connection.selectDistinctID(schemaName, indexTableName);
@@ -91,14 +111,16 @@ public class GenderDocumentDao {
 			genderDocument.setPronouns(pronouns);
 			genderDocument.setConjunctions(conjunctions);
 			genderDocument.setArticles(articles);
+			genderDocument.getTargetList().put(POS.AUXILIARY_VERB.getValue(), genderDocument.getAuxVerbs());
+			genderDocument.getTargetList().put(POS.PREPOSITION.getValue(), genderDocument.getPrepositions());
+			genderDocument.getTargetList().put(POS.PRONOUN.getValue(), genderDocument.getPronouns());
+			genderDocument.getTargetList().put(POS.CONJUNCTION.getValue(), genderDocument.getConjunctions());
+			genderDocument.getTargetList().put(POS.DETERMINER.getValue(), genderDocument.getArticles());
 			
 			addGenderDocument(id, genderDocument);
 		}
 		
 		setGender(schemaName);
-		
-		System.out.println(genderDocs);
-		
 	}
 	
 	private void setGender(String schemaName){

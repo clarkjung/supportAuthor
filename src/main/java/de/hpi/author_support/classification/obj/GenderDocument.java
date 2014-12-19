@@ -2,6 +2,8 @@ package de.hpi.author_support.classification.obj;
 
 import java.util.HashMap;
 
+import de.hpi.author_support.classification.dao.POS;
+
 public class GenderDocument {
 	
 	private int id;
@@ -12,8 +14,15 @@ public class GenderDocument {
 	private HashMap<String, Integer> pronouns;
 	private HashMap<String, Integer> conjunctions;
 	private HashMap<String, Integer> articles;
+	private HashMap<Integer, HashMap<String, Integer>> targetList;
 
 	public GenderDocument(){
+		this.auxVerbs = new HashMap<String, Integer>();
+		this.prepositions = new HashMap<String, Integer>();
+		this.pronouns = new HashMap<String, Integer>();
+		this.conjunctions = new HashMap<String, Integer>();
+		this.articles = new HashMap<String, Integer>();
+		this.targetList = new HashMap<Integer, HashMap<String, Integer>>();
 	}
 
 	public int getId() {
@@ -80,9 +89,12 @@ public class GenderDocument {
 		this.articles = articles;
 	}
 	
-	
-	
-	
-	
+	public HashMap<Integer, HashMap<String, Integer>> getTargetList() {
+		return targetList;
+	}
+
+	public void setTargetList(HashMap<Integer, HashMap<String, Integer>> targetList) {
+		this.targetList = targetList;
+	}
 	
 }
