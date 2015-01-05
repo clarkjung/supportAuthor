@@ -2,7 +2,6 @@ package de.hpi.author_support.classification.db;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import de.hpi.author_support.classification.dao.IDnGender;
 

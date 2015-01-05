@@ -2,8 +2,6 @@ package de.hpi.author_support.classification.obj;
 
 import java.util.HashMap;
 
-import de.hpi.author_support.classification.dao.POS;
-
 public class GenderDocument {
 	
 	private int id;

@@ -1,7 +1,6 @@
 package de.hpi.author_support.classification.classifier;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,12 +34,6 @@ public class GenderDocumentClassifier {
 		
 		this.cvMale = splitDocs(maleDocs);
 		this.cvFemale = splitDocs(femaleDocs);
-		
-		//setDocs();
-	}
-	
-	//test
-	public GenderDocumentClassifier(){
 		
 	}
 	
@@ -105,7 +98,7 @@ public class GenderDocumentClassifier {
 		return docsPair;
 	}
 	
-	private int getHashMapAllValues(HashMap<String, Integer> map){
+	public int getHashMapAllValues(HashMap<String, Integer> map){
 		
 		int values = 0;
 		
@@ -294,8 +287,8 @@ public class GenderDocumentClassifier {
 			if(maleProduct >= femaleProduct) hit++;
 		}
 		
-//		System.out.println("For Male");
-//		System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
+		System.out.println("For Male");
+		System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
 		
 		//for female
 		count = 0;
@@ -309,8 +302,8 @@ public class GenderDocumentClassifier {
 			if(femaleProduct >= maleProduct) hit++;
 		}
 		
-//		System.out.println("For Female");
-//		System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
+		System.out.println("For Female");
+		System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
 	}
 	
 	
