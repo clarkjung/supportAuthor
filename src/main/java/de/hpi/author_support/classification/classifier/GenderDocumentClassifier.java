@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import de.hpi.author_support.classification.dao.GenderDocumentDao;
 import de.hpi.author_support.classification.dao.POS;
+import de.hpi.author_support.classification.obj.ClassificationResult;
 import de.hpi.author_support.classification.obj.CombinedGenderDocument;
 import de.hpi.author_support.classification.obj.GenderDocument;
 
@@ -22,6 +24,8 @@ public class GenderDocumentClassifier {
 	private List<GenderDocument> femaleDocs;
 	private List<List<GenderDocument>> cvMale;
 	private List<List<GenderDocument>> cvFemale;
+	private String schemaName;
+	private String indexTableName;
 	
 	public GenderDocumentClassifier(List<GenderDocument> maleDocs, List<GenderDocument> femaleDocs){
 		
@@ -35,6 +39,28 @@ public class GenderDocumentClassifier {
 		this.cvMale = splitDocs(maleDocs);
 		this.cvFemale = splitDocs(femaleDocs);
 		
+	}
+	
+	public GenderDocumentClassifier(String schemaName, String indexTableName){
+		
+		this.maleTrainingDocs = new ArrayList<GenderDocument>();
+		this.femaleTrainingDocs = new ArrayList<GenderDocument>();
+		this.maleTestDocs = new ArrayList<GenderDocument>();
+		this.femaleTestDocs = new ArrayList<GenderDocument>();
+		
+		this.schemaName = schemaName;
+		this.indexTableName = indexTableName;
+	}
+	
+	public void train(){
+		
+		GenderDocumentDao gdDao = new GenderDocumentDao();
+		gdDao.fetchGenderDocuments(schemaName, indexTableName);
+		
+		this.maleDocs = gdDao.getMaleDocs();
+		this.femaleDocs = gdDao.getFemaleDocs();
+		this.cvMale = splitDocs(maleDocs);
+		this.cvFemale = splitDocs(femaleDocs);
 	}
 	
 	private List<List<GenderDocument>> splitDocs(List<GenderDocument> genderDocs){
@@ -203,7 +229,7 @@ public class GenderDocumentClassifier {
 		return product;
 	}
 	
-	public void cv_classify(List<POS> options){
+	public ClassificationResult test(List<POS> options){
 		
 		double maleSum = 0;
 		double femaleSum = 0;
@@ -230,9 +256,6 @@ public class GenderDocumentClassifier {
 				
 				if(maleProduct >= femaleProduct) hit++;
 			}
-			
-			System.out.println("For Male");
-			System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
 			maleSum += (double)hit/(double)count;
 			
 			//for female
@@ -246,15 +269,15 @@ public class GenderDocumentClassifier {
 				
 				if(femaleProduct >= maleProduct) hit++;
 			}
-			
-			System.out.println("For Female");
-			System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
 			femaleSum += (double)hit/(double)count;
 		}
 		
-		System.out.println("==================");
-		System.out.println("male: " + maleSum/10);
-		System.out.println("female: " + femaleSum/10);
+		ClassificationResult result = new ClassificationResult();
+		result.setMalePrecision(maleSum/10);
+		result.setFemalePrecision(femaleSum/10);
+		result.setTotalPrecision();
+		
+		return result;
 	}
 	
 	private List<GenderDocument> combineLists(int i, List<List<GenderDocument>> cvGender){
@@ -305,11 +328,5 @@ public class GenderDocumentClassifier {
 		System.out.println("For Female");
 		System.out.println("count: " + count + ", hit: " + hit + ", precise: " + hit*100/count);
 	}
-	
-	
-	
-	
-	
-	
 	
 }
